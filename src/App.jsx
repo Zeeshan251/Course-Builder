@@ -32,32 +32,31 @@ import ImageComponent from "./components/ImageComponent";
 
 
 export default function App() {
-  // State for storing all the items
+
   const [items, setItems] = useState([]);
 
-  // module overlay
+
   const [createModuleOverlay, setCreateModuleOverlay] = useState(false);
   const [editModuleOverlay, setEditModuleOverlay] = useState(false);
   const [editModuleId, setEditModuleId] = useState(null);
 
-  // link overlay
+
   const [addLinkOverlay, setAddLinkOverlay] = useState(false);
   const [editLinkOverlay, setEditLinkOverlay] = useState(false);
   const [editLinkId, setEditLinkId] = useState(null);
 
-  // file overlay
+
   const [editFileOverlay, setEditFileOverlay] = useState(false);
   const [editFileId, setEditFileId] = useState(null);
 
-  // Dropdown menu
   const [dropdownMenu, setDropdownMenu] = useState(false);
 
-  // Track Active resource id
+
   const [activeResourceId, setActiveResourceId] =
     useState(null);
   const [activeResourceType, setActiveResourceType] = useState();
 
-  // Three dots dropdown menu
+
   const [editDropdownMenu, setEditDropdownMenu] = useState(false);
 
   useEffect(() => {
@@ -67,7 +66,7 @@ export default function App() {
     }
   }, []);
 
-  // Save items to local storage whenever they change
+ 
   useEffect(() => {
     localStorage.setItem("items", JSON.stringify(items));
   }, [items]);
